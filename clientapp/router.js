@@ -3,13 +3,15 @@ var Backbone = require('backbone');
 var HomePage = require('./pages/home');
 var CollectionDemo = require('./pages/collectionDemo');
 var InfoPage = require('./pages/info');
+var DrawPage = require('./pages/draw');
 
 
 module.exports = Backbone.Router.extend({
     routes: {
         '': 'home',
         'collections': 'collectionDemo',
-        'info': 'info'
+        'info': 'info',
+        'draw': 'draw'
     },
 
     // ------- ROUTE HANDLERS ---------
@@ -30,5 +32,12 @@ module.exports = Backbone.Router.extend({
         app.renderPage(new InfoPage({
             model: me
         }));
-    }
+    },
+
+    draw: function () {
+        app.renderPage(new DrawPage({
+            model: me,
+            collection: app.drawModel
+        }));
+    },
 });

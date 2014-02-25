@@ -33,8 +33,8 @@ app.set('view engine', 'jade');
 // Configure Moonboots to serve our client application
 // ---------------------------------------------------
 var clientApp = new Moonboots({
-    jsFileName: 'draw',
-    cssFileName: 'draw',
+    jsFileName: 'clientScript',
+    cssFileName: 'clientStyle',
     main: __dirname + '/clientapp/app.js',
     developmentMode: config.isDev,
     libraries: [

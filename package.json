@@ -1,7 +1,7 @@
 {
   "name": "draw",
   "version": "0.0.1",
-  "author": "Bentley Jensen <bentleyjensen@gmail.com>",
+  "author": "Bentley Jensen",
   "description": "RTC draw with your friends! All the friends!",
   "dependencies": {
     "andlog": "0.0.4",

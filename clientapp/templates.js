@@ -12,7 +12,7 @@ exports.pages = {};
 exports.body = function anonymous(locals) {
     var buf = [];
     with (locals || {}) {
-        buf.push('<body><div class="container"><div class="navbar"><div class="navbar-inner"><a href="#" class="brand">RTCwhiteboard</a><ul class="nav"><li><a href="/">home</a></li><li><a href="/collections">collection demo</a></li><li><a href="/info">more info</a></li></ul></div></div><main id="pages"></main></div></body>');
+        buf.push('<body><div class="container"><div class="navbar"><div class="navbar-inner"><a href="#" class="brand">RTCwhiteboard</a><ul class="nav"><li><a href="/">Home</a></li><li><a href="/draw">Draw</a></li><li><a href="/collections">Collection Demo</a></li><li><a href="/info">More Info</a></li></ul></div></div><main id="pages"></main></div></body>');
     }
     return buf.join("");
 };
@@ -44,11 +44,20 @@ exports.pages.collectionDemo = function anonymous(locals) {
     return buf.join("");
 };
 
+// draw.jade compiled template
+exports.pages.draw = function anonymous(locals) {
+    var buf = [];
+    with (locals || {}) {
+        buf.push('<section class="page pageThree"><style>#makeCanvas{border:1px solid black;width:100%;height:88%;} .full{ height:100%; width:100%}</style><script>src="./primus/primus.js"</script><div class="full"><canvas id="makeCanvas" class="full"></canvas></div><div class="buttons"><button class="btn erase">Erase</button><button class="btn bigger">Bigger</button><button class="btn smaller">Smaller</button><button class="btn color">New Color</button></div></section>');
+    }
+    return buf.join("");
+};
+
 // home.jade compiled template
 exports.pages.home = function anonymous(locals) {
     var buf = [];
     with (locals || {}) {
-        buf.push('<section class="page home"><h2>Welcome to a skeleton for RTCwhiteboard</h2><p>If you "view source" you\'ll see it\'s 100% client rendered.</p><p>Click around the site using the nav bar at the top. </p><p>Things to note:<ul><li>The url changes, no requests are made to the server.</li><li>Refreshing the page will always get you back to the same page</li><li>Page changes are nearly instantaneous</li><li>In development mode, you don\'t need to restart the server to see changes, just edit and refresh.</li><li>In production mode, it will serve minfied, uniquely named files with super agressive cache headers. To test:<ul> <li>in dev_config.json set <code>isDev</code> to <code>false</code>.</li><li>restart the server.</li><li>view source and you\'ll see minified css and js files with unique names.</li><li>open the "network" tab in chrome dev tools (or something similar). You\'ll also want to make sure you haven\'t disabled your cache.</li><li>without hitting "refresh" load the app again (selecting current URL in url bar and hitting "enter" works great).</li><li>you should now see that the JS and CSS files were both served from cache without making any request to the server at all.</li></ul></li></ul></p></section>');
+        buf.push('<section class="page home"><h2>Welcome to a skeleton for RTCwhiteboard</h2><p>If you "view source" you\'ll see it\'s 100% client rendered.</p><p>Click around the site using the nav bar at the top.</p><h1>POOP </h1><p>Things to note:<ul><li>The url changes, no requests are made to the server.</li><li>Refreshing the page will always get you back to the same page</li><li>Page changes are nearly instantaneous</li><li>In development mode, you don\'t need to restart the server to see changes, just edit and refresh.</li><li>In production mode, it will serve minfied, uniquely named files with super agressive cache headers. To test:<ul> <li>in dev_config.json set <code>isDev</code> to <code>false</code>.</li><li>restart the server.</li><li>view source and you\'ll see minified css and js files with unique names.</li><li>open the "network" tab in chrome dev tools (or something similar). You\'ll also want to make sure you haven\'t disabled your cache.</li><li>without hitting "refresh" load the app again (selecting current URL in url bar and hitting "enter" works great).</li><li>you should now see that the JS and CSS files were both served from cache without making any request to the server at all.</li></ul></li></ul></p></section>');
     }
     return buf.join("");
 };
